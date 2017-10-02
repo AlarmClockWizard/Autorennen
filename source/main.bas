@@ -180,17 +180,17 @@
 1999 REM ***** STARTBILD *****
 2000 PRINT CHR$(147)"?":PRINT:PRINT:PRINT:PRINT
 2001 PRINT CHR$(147):PRINT:PRINT:PRINT:PRINT
-2010 PRINTTAB( 9)"?   ??           ? ?"
-2020 PRINTTAB( 9)"? ?  ? ??          ? ?"
-2030 PRINTTAB( 9)"? ?   ? ?          ? ?    ? ?    "
-2040 PRINTTAB( 9)"? ?   ? ?          ? ?          "
-2045 PRINTTAB( 9)"? ?  ? ??    ?  ?    ? ?    ? ?    "
-2050 PRINTTAB( 9)"?   ??    ? ? ?  ? ?   ? ?    ? ?    "
-2060 PRINTTAB( 9)"? ? ? ? ??    ? ?    ? ? ?? ? ?"
-2070 PRINTTAB( 9)""
-2080 PRINTTAB( 9)""
-2090 PRINTTAB( 9)""
-2100 PRINT:PRINT:PRINT:PRINT:PRINTTAB(16)"?presents?"
+2010 PRINTTAB( 9)CHR$(18)"   "CHR$(127)CHR$(146)"           "CHR$(18)" "CHR$(146)
+2020 PRINTTAB( 9)CHR$(18)" "CHR$(146)"  "CHR$(18)" "CHR$(127)CHR$(146)"          "CHR$(18)" "CHR$(146)
+2030 PRINTTAB( 9)CHR$(18)" "CHR$(146)"   "CHR$(18)" "CHR$(146)"          "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)
+2040 PRINTTAB( 9)CHR$(18)" "CHR$(146)"   "CHR$(18)" "CHR$(146)"          "CHR$(18)" "CHR$(146)
+2045 PRINTTAB( 9)CHR$(18)" "CHR$(146)"  "CHR$(18)" "CHR$(146)CHR$(169)"    "CHR$(18)"  "CHR$(146)"    "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)
+2050 PRINTTAB( 9)CHR$(18)"   "CHR$(146)CHR$(169)"    "CHR$(18)" "CHR$(146)"  "CHR$(18)" "CHR$(146)"   "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)
+2060 PRINTTAB( 9)CHR$(18)" "CHR$(146)" "CHR$(18)" "CHR$(127)CHR$(146)"   "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)"  "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)
+2070 PRINTTAB( 9)CHR$(18)" "CHR$(146)"  "CHR$(18)" "CHR$(127)CHR$(146)"  "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)"  "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)
+2080 PRINTTAB( 9)CHR$(18)" "CHR$(146)"   "CHR$(18)" "CHR$(146)"   "CHR$(18)" "CHR$(146)"  "CHR$(18)" "CHR$(146)"   "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)
+2090 PRINTTAB( 9)CHR$(18)" "CHR$(146)"   "CHR$(18)" "CHR$(146)"    "CHR$(18)" "CHR$(146)""CHR$(18)" "CHR$(146)"    "CHR$(18)"   "CHR$(146)"  "CHR$(18)" "CHR$(146)
+2100 PRINT:PRINT:PRINT:PRINT:PRINTTAB(16)CHR$(18)"present"CHR$(146)
 2101 GETRO$:IFRO$=""GOTO2101
 2102 PRINT CHR$(147)
 2105 POKEV+21,0:POKE V+23,120:POKE V+29,120:POKEV+42,0:POKEV+43,2
@@ -249,15 +249,15 @@
 2650 PRINT"     und             "SE$" sekunden"
 2660 PRINT"     gebraucht"
 2670 PRINT"????????wollen sie nochmal ?"
-2680 PRINT:PRINT:PRINT"???????? ja ? /  nein ";:EN=1:
+2680 PRINT:PRINT:PRINT"???????"CHR$(18)" ja "CHR$(146)" /  nein ";:EN=1:
 2700 SB=PEEK(56322):POKE 56322,SB AND 224
 2710 SP=PEEK(56320):POKE 56322,SB
 2720 IF (SP AND 4)=0 THEN GOSUB2800
 2730 IF (SP AND 8)=0 THEN GOSUB2900
 2740 IF (SP AND 16)=0THEN GOSUB3000
 2750 GOTO2700
-2800 PRINT"?????????????? ja ? /  nein ";:EN=1:RETURN
-2900 PRINT"????????????? ja  / ? nein ?";:EN=2:RETURN
+2800 PRINT"?????????????"CHR$(18)" ja "CHR$(146)" /  nein ";:EN=1:RETURN
+2900 PRINT"????????????? ja  / "CHR$(18)" nein "CHR$(146)"";:EN=2:RETURN
 3000 IF EN=1 THEN RESTORE:ZIEL=0:GOTO 1
 3010 REMPRINT CHR$(147):PRINT"??????????????????????????? schade ":
 3015 PRINT CHR$(147):FORN=1TO189:READ Q:NEXT
